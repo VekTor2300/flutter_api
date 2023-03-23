@@ -4,96 +4,96 @@
 
 #### Ход работы: 
 
-##### Регистрация</br>
+##### Код регистрация
+
+<img src="img/20.png" alt="video demo"/>
+
+##### Пример работы:
 
 <img src="img/1.png" alt="video demo"/>
 
-##### Пример регистрации</br>
+##### Код авторизация
 
-<img src="main.png" alt="video demo"/>
+<img src="img/21.png" alt="video demo"/>
 
-##### Авторизация</br>
+##### Пример работы:
 
-<img src="main.png" alt="video demo"/>
+<img src="img/2.png" alt="video demo"/>
 
-##### Пример авторизации</br>
+##### Код RefreshToken
 
-<img src="main.png" alt="video demo"/>
+<img src="img/22.png" alt="video demo"/>
 
-##### RefreshToken</br>
+##### Пример работы:
 
-<img src="main.png" alt="video demo"/>
+<img src="img/3.png" alt="video demo"/>
 
-##### Пример RefreshToken</br>
+##### Код вывода данных пользователя
 
-<img src="main.png" alt="video demo"/>
+<img src="img/23.png" alt="video demo"/>
 
-##### Вывод данных пользователя</br>
+##### Пример работы:
 
-<img src="main.png" alt="video demo"/>
+<img src="img/4.png" alt="video demo"/>
 
-##### Пример вывода данных пользователя</br>
+##### Код редактирования данных пользователя
 
-<img src="main.png" alt="video demo"/>
+<img src="img/24.png" alt="video demo"/>
 
-##### Редактирование данных пользователя</br>
+##### Пример работы
 
-<img src="main.png" alt="video demo"/>
+<img src="img/5.png" alt="video demo"/>
 
-##### Пример редактирования данных пользователя</br>
+##### Код изменения пароля
 
-<img src="main.png" alt="video demo"/>
+<img src="img/25.png" alt="video demo"/>
 
-##### Изменение пароля пользователя</br>
+##### Пример работы
 
-<img src="main.png" alt="video demo"/>
+<img src="img/6.png" alt="video demo"/>
 
-##### Пример изменения пароля пользователя</br>
+##### Код создания отчета</br>
 
-<img src="main.png" alt="video demo"/>
+<img src="img/26.png" alt="video demo"/>
 
-##### Создание заметки</br>
+##### Пример работы
 
-<img src="main.png" alt="video demo"/>
+<img src="img/7.png" alt="video demo"/>
 
-##### Пример создания заметки</br>
+##### Код изменения отчета
 
-<img src="main.png" alt="video demo"/>
+<img src="img/27.png" alt="video demo"/>
 
-##### Изменение заметки </br>
+##### Пример работы
 
-<img src="main.png" alt="video demo"/>
+<img src="img/8.png" alt="video demo"/>
 
-##### Пример изменения заметки</br>
+##### Код вывода отчетов
 
-<img src="main.png" alt="video demo"/>
+<img src="img/28.png" alt="video demo"/>
 
-##### Вывод заметок</br>
+##### Пример работы вывода заметок c пагинацией</br>
 
-<img src="main.png" alt="video demo"/>
+<img src="img/9.png" alt="video demo"/>
 
-##### Пример вывода заметок c пагинацией</br>
+##### Пример вывода заметок с фильтром
 
-<img src="main.png" alt="video demo"/>
+<img src="img/10.png" alt="video demo"/>
 
-##### Пример вывода заметок с фильтром</br>
+##### Код для логического удаления отчета
 
-<img src="main.png" alt="video demo"/>
+<img src="img/29.png" alt="video demo"/>
 
-##### Логическое удаление </br>
+##### Пример работы</br>
 
-<img src="main.png" alt="video demo"/>
+<img src="img/11.png" alt="video demo"/>
 
-##### Пример логического удаления</br>
+##### Код восстановления отчета
 
-<img src="main.png" alt="video demo"/>
+<img src="img/30.png" alt="video demo"/>
 
-##### Восстановление заметки</br>
+##### Пример работы
 
-<img src="main.png" alt="video demo"/>
-
-##### Пример восстановления заметки</br>
-
-<img src="main.png" alt="video demo"/>
+<img src="img/12.png" alt="video demo"/>
 
 #### Вывод: создал API включающий в себя регистрацию, авторизацию, RefreshToken, вывод и редактирование данных пользователя, изменение пароля пользователя, пагинацию данных, фильтрацию, логическое удаление и восстановление, историю действий.
