@@ -78,7 +78,7 @@
 
 ##### Пример вывода заметок с фильтром
 
-<img src="img/10.png" alt="video demo"/>
+<img src="img/11.png" alt="video demo"/>
 
 ##### Код для логического удаления отчета
 
@@ -86,7 +86,7 @@
 
 ##### Пример работы</br>
 
-<img src="img/11.png" alt="video demo"/>
+<img src="img/10.png" alt="video demo"/>
 
 ##### Код восстановления отчета
 
