@@ -6,7 +6,7 @@
 
 ##### Регистрация</br>
 
-<img src="main.png" alt="video demo"/>
+<img src="img/1.png" alt="video demo"/>
 
 ##### Пример регистрации</br>
 
