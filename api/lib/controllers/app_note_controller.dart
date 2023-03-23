@@ -89,7 +89,6 @@ class AppNoteController extends ResourceController {
       @Bind.query("filter") String? filter}) async {
     try {
       final id = AppUtils.getIdFromHeader(header);
-
       Query<Note>? notesQuery;
 
       if (search != null && search != "") {
@@ -110,7 +109,6 @@ class AppNoteController extends ResourceController {
         default:
           notesQuery.where((note) => note.status).equalTo("false");
       }
-
       if (limit != null && limit > 0) {
         notesQuery.fetchLimit = limit;
       }

@@ -18,7 +18,6 @@ class AppAuthContoler extends ResourceController {
     }
 
     try {
-      // Поиск пользователя по имени в базе данных
       final qFindUser = Query<User>(managedContext)
         ..where((element) => element.userName).equalTo(user.userName)
         ..returningProperties(
@@ -29,23 +28,16 @@ class AppAuthContoler extends ResourceController {
           ],
         );
 
-      // получаем первый элемент из поиска
       final findUser = await qFindUser.fetchOne();
-
       if (findUser == null) {
         throw QueryException.input('Пользователь не найден', []);
       }
-
-      // генерация хэша пароля для дальнейшей проверки
       final requestHashPassword =
           generatePasswordHash(user.password ?? '', findUser.salt ?? '');
 
-      // Проверка пароля
       if (requestHashPassword == findUser.hashPassword) {
-        // Обновления token пароля
         _updateTokens(findUser.id ?? -1, managedContext);
 
-        // Получаем данные пользователя
         final newUser =
             await managedContext.fetchObjectWithID<User>(findUser.id);
 
@@ -77,27 +69,23 @@ class AppAuthContoler extends ResourceController {
 
     try {
       late final int id;
-
-      // создаем транзакицю
+      // Создаем транзакицю
       await managedContext.transaction((transaction) async {
-        // Создаем запрос для создания пользователя
+        // Создаем запрос на создания пользователя
         final qCreateUser = Query<User>(transaction)
           ..values.userName = user.userName
           ..values.email = user.email
           ..values.salt = salt
           ..values.hashPassword = hashPassword;
-
-        // Добавление пользоваетля в базу данных
+        // Добавление пользоваетля в бд
         final createdUser = await qCreateUser.insert();
-
-        // Сохраняем id пользователя
+        // Сохранение id пользователя
         id = createdUser.id!;
-
         // Обновление токена
         _updateTokens(id, transaction);
       });
 
-      // Получаем данные пользователя по id
+      // Получаем данные пользователя по сохраненному id
       final userData = await managedContext.fetchObjectWithID<User>(id);
 
       return Response.ok(
@@ -115,17 +103,14 @@ class AppAuthContoler extends ResourceController {
   Future<Response> refreshToken(
       @Bind.path('refresh') String refreshToken) async {
     try {
-      // Полчаем id пользователя из jwt token
       final id = AppUtils.getIdFromToken(refreshToken);
 
-      // Получаем данные пользователя по его id
       final user = await managedContext.fetchObjectWithID<User>(id);
 
       if (user!.refreshToken != refreshToken) {
         return Response.unauthorized(body: 'Token не валидный');
       }
 
-      // Обновление token
       _updateTokens(id, managedContext);
 
       return Response.ok(
@@ -150,9 +135,8 @@ class AppAuthContoler extends ResourceController {
     await qUpdateTokens.updateOne();
   }
 
-  // Генерация jwt token
+  //Генерация jwt token
   Map<String, String> _getTokens(int id) {
-    // todo remove when release
     final key = Platform.environment['SECRET_KEY'] ?? 'SECRET_KEY';
     final accessClaimSet = JwtClaim(
       maxAge: const Duration(hours: 1), // Время жизни token
